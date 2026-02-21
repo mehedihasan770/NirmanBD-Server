@@ -13,7 +13,7 @@ app.use('/api/products', productRoutes);
 
 connectDB().then(() => {
     app.get('/', (req, res) => {
-        res.send('NirmanBD সার্ভার একদম রেডি এবং ডাটাবেস কানেক্টেড! ✅');
+        res.send('NirmanBD server is running! ✅');
     });
 
     app.listen(port, () => {
@@ -22,5 +22,5 @@ connectDB().then(() => {
     });
 
 }).catch(err => {
-    console.error("ডাটাবেস কানেক্ট না হওয়ায় সার্ভার চালু হতে পারেনি! ❌", err);
+    console.error("opps database and server error ❌", err);
 });
