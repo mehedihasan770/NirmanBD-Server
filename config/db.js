@@ -9,14 +9,13 @@ let db;
 const connectDB = async () => {
     try {
         await client.connect();
-        db = client.db("NirmanBD"); // Ekhane apnar database er nam hobe
+        db = client.db("NirmanBD");
         console.log("Database Connect Hoyeche! ✅");
     } catch (error) {
         console.error("Connect korte error hoyeche:", error);
     }
 };
 
-// Eta diye amra onno file e database ke niye jabo
 const getDb = () => db;
 
 module.exports = { connectDB, getDb };

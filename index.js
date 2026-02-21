@@ -4,9 +4,12 @@ const { connectDB } = require('./config/db');
 const app = express()
 require('dotenv').config();
 const port = process.env.PORT || 3000;
+const productRoutes = require('./routes/productRoutes');
 
 app.use(cors())
 app.use(express.json())
+
+app.use('/api/products', productRoutes);
 
 connectDB().then(() => {
     app.get('/', (req, res) => {
